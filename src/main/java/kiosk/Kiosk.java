@@ -38,6 +38,8 @@ public class Kiosk {
         System.out.println("0. 종료");
     }
 
+
+    // 장바구니 내용
     private void showCart() {
         System.out.println("장바구니에 담음 메뉴");
         cart.stream()
@@ -48,6 +50,8 @@ public class Kiosk {
         System.out.printf("W %.2f%n", total);
     }
 
+
+    // 할인 적용
     private void applyDiscount(DiscountType discountType) {
         double discountedTotal = cart.stream()
                 .mapToDouble(MenuItem::getPrice)
@@ -64,6 +68,8 @@ public class Kiosk {
         return true;
     }
 
+
+    //실제 프로그램을 실행시키는 메소드
     public void start() {
         Scanner sc = new Scanner(System.in);
 
@@ -115,6 +121,7 @@ public class Kiosk {
         }
     }
 
+    // 메뉴 관리
     private void menuSelection(Scanner sc, MenuItem menu) {
         System.out.print("메뉴를 선택해주세요(0입력 시 취소) ");
         int itemChoice = sc.nextInt();
@@ -122,8 +129,9 @@ public class Kiosk {
             return;
         }
 
+        // 잘못된 입력을 처리하기 위한 try - catch문
         try {
-            MenuItem selectedItem = menu.getItems().get(itemChoice - 1);
+    문       MenuItem selectedItem = menu.getItems().get(itemChoice - 1);
             System.out.printf("선택: %s | W %.2f | %s%n", selectedItem.getName(), selectedItem.getPrice(), selectedItem.getDescription());
             System.out.println("장바구니에 추가하시겠습니까? 1. 예  2. 아니오");
             int addChoice = sc.nextInt();

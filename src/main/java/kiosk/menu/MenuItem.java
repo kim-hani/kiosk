@@ -3,6 +3,8 @@ package kiosk.menu;
 import java.util.ArrayList;
 import java.util.List;
 
+
+// 버거,디저트,음료 클래스의 상위 클래스
 public class MenuItem {
     protected List<MenuItem> items = new ArrayList<>();
     private String name;

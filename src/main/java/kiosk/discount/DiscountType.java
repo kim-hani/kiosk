@@ -1,5 +1,7 @@
 package kiosk.discount;
 
+
+// 할인을 enum타입으로 정의
 public enum DiscountType {
     NATIONAL(1, 0.10),
     SOLDIER(2, 0.05),
